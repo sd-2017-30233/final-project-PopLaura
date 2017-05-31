@@ -1,0 +1,55 @@
+﻿@model IEnumerable<AGM.Models.Paitings>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Welcome on paintings page!</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.paiting_url)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.artist_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paiting_description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="@item.paiting_url" alt="Smiley face">
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.artist_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paiting_description)
+        </td>
+        <td>
+            @if (Session["UserID"] != null)
+            {
+                if (Session["RoleID"].Equals("1"))
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.paiting_id })
+
+                    @Html.ActionLink("Delete", "Delete", new { id = item.paiting_id })
+                }
+            }
+
+                @Html.ActionLink("Details", "Details", new { id = item.paiting_id })
+            
+
+        </td>
+    </tr>
+}
+
+</table>

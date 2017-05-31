@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+}
+
+<h2>Hello @Session["UserName"]</h2>
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Users</h3>
+                <p>Here you have a quik action on Users</p>
+            </div>
+            <div class="panel-body">
+                <p><a class="btn btn-default" href="http://localhost:60424/Users">Go! &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel  panel-warning">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Artist</h3>
+                <p>Here you can see how your Artist are doing!</p>
+            </div>
+            <div class="panel-body">
+                <p><a class="btn btn-default" href="http://localhost:60424/Artists">Go! &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel  panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Paitings</h3>
+                <p>Here you have access to all of the paitings!</p>
+            </div>
+            <div class="panel-body">
+                <p><a class="btn btn-default" href="http://localhost:60424/Paitings">Go! &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

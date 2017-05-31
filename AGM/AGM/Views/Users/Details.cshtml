@@ -1,0 +1,84 @@
+﻿@model AGM.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.role_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.role_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.amounnt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amounnt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.short_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.short_description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @if (Session["UserID"] != null)
+    {
+        if (Session["RoleID"].Equals("1"))
+        {
+            @Html.ActionLink("Edit", "Edit", new { id = Model.users_id })
+            @Html.ActionLink("Back to List", "Index")
+        }
+        else
+            if (Session["RoleID"].Equals("2"))
+        {
+            @Html.ActionLink("Edit", "Edit", new { id = Model.users_id })
+
+        }
+    }
+</p>
